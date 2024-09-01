@@ -1,5 +1,5 @@
 def deleteCustomer(customers):
-   print("\n- ELIMINAR CLIENTE -\n")
+   print("\n- ELIMINAR CLIENTE -")
 
    customerToDeleteId = input("\nIngrese ID de usuario a eliminar (Sin puntos): ")
    

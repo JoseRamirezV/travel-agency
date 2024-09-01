@@ -5,7 +5,7 @@ import re
 customers = {}
 options = ["Crear paquetes turísticos", "Buscar paquetes turísticos", "Reservas de vuelos", "Reservas de hoteles","Gestión de clientes", "Salir"]
 
-print("\n--- ¡Bienvenido a IDKAirlines! :) ---")
+print("\n--- ¡Bienvenido a IDKAirlines! ---")
 
 stopExecution = False
 
@@ -22,16 +22,16 @@ while not stopExecution:
       selectedOption = int(optionInput)
 
       if(selectedOption == 1):
-         print(options[selectedOption])
+         print(options[selectedOption-1])
 
       if(selectedOption == 2):
-         print(options[selectedOption])
+         print(options[selectedOption-1])
 
       if(selectedOption == 3):
-         print(options[selectedOption])
+         print(options[selectedOption-1])
 
       if(selectedOption == 4):
-         print(options[selectedOption])
+         print(options[selectedOption-1])
 
       if(selectedOption == 5):
          updatedCustomers = customersMenu(customers)

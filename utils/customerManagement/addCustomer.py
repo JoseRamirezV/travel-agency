@@ -4,12 +4,12 @@ allowedIdTypes = ['CC', 'CE', 'PEP']
 
 def addCustomer(customers):
    readyToSave = False
-   error = False
 
-   print("\n- AGREGAR CLIENTE -\n")
+   print("\n- AGREGAR CLIENTE -")
 
    while not readyToSave:
-      idType = input("Tipo de documento de identificación(CC, CE, PEP): ")
+      error = False
+      idType = input("\nTipo de documento de identificación(CC, CE, PEP): ")
       id = input(f"{idType.upper()} del cliente (sin puntos): ")
       name = input("Nombre completo del cliente: ")
       age = input("Edad del cliente: ")
@@ -22,8 +22,8 @@ def addCustomer(customers):
          print("\nQue ID tiene números?")
          error = True
 
-      if 8 > len(id) or len(id) > 10:
-         print("\nEl numero de documento debe tener mínimo 8 números ")
+      if 7 > len(id) or len(id) > 10:
+         print("\nDebe ser un numero de documento valido ")
          error = True
 
       if re.search(r'[a-zA-Z]', age):
@@ -36,7 +36,13 @@ def addCustomer(customers):
          readyToSave = True
 
    if id in customers.keys():
-      print("\nERROR!: Este cliente ya existe")
+      print(f"\nERROR!: Ya existe un cliente registrado con ID {id}\n")
+      showUser = input("¿Desea ver el nombre de éste cliente? (S/N)? ").upper() == 'S'
+      if showUser:
+         print(f"Cliente: {customers[id]['name'].upper()}")
+      else:
+         print("Bien")
+
    else:
       customers[id] = {
          "idType": idType,
