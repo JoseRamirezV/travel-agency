@@ -29,6 +29,10 @@ def addCustomer(customers):
       if re.search(r'[a-zA-Z]', age):
          print("\nEdad en números por favor :)")
          error = True
+      elif int(age) < 18:
+         print("\nEl cliente debe ser mayor de edad")
+         error = True
+
 
       if error:
          print("\nPor favor verifique que los datos ingresados coincidan con el formato solicitado.")

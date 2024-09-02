@@ -8,7 +8,7 @@ def customersMenu(customers):
 
    options = ["Listar clientes", "Agregar cliente", "Actualizar cliente", "Eliminar cliente", "Salir"]
 
-   print("\n-- GESTIóN DE CLIENTES --")
+   print("\n-- GESTIÓN DE CLIENTES --")
 
    stopExecution = False
 

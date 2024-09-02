@@ -1,4 +1,4 @@
-def mostrar_vuelos():
-    print("Vuelos disponibles:")
-    for id_vuelo, info in vuelos.items():
-        print(f"{id_vuelo}: {info['origen']} a {info['destino']} - Precio: {info['precio']}US$")
+def showFLights(flights):
+   print("\n- VUELOS DISPONIBLES -\n")
+   for flightId, flightData in flights.items():
+      print(f"{flightId}: {flightData['origin']} a {flightData['destiny']} - Precio: {flightData['price']} USD$ - Asientos disponibles: {flightData['seatsAvailable']}")
