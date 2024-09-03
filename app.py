@@ -1,9 +1,11 @@
 from utils.customerManagement.customersMenu import customersMenu
 from utils.reservations.flightReservation import flightReservation
 from utils.reservations.showReservations import showReservations
+from utils.packageManagement.addPackage import createTourPackage
 
 import re
 
+packages = []
 
 customers = {
    '123123123': {
@@ -37,7 +39,7 @@ hotels = {
 }
 
 
-options = ["Crear paquetes turísticos", "Buscar paquetes turísticos", "Reservas de vuelos", "Ver reservas","Gestión de clientes", "Salir"]
+options = ["Crear paquetes turísticos", "Buscar paquetes turísticos", "Reservas de vuelos", "Ver reservas", "Gestión de clientes", "Salir"]
 
 print("\n--- ¡Bienvenido a IDKAirlines! ---")
 
@@ -56,10 +58,13 @@ while not stopExecution:
       selectedOption = int(optionInput)
 
       if(selectedOption == 1):
-         print(options[selectedOption-1])
+         newPackage = createTourPackage()
+         packages.append(newPackage)
+         print(f"\nPaquete a {newPackage["destination"]} creado exitosamente")
 
       if(selectedOption == 2):
-         print(options[selectedOption-1])
+         for package in packages:
+            print(package)
 
       if(selectedOption == 3):
          customerId = input("\nID de cliente: ")
@@ -85,7 +90,6 @@ while not stopExecution:
 
       if(selectedOption == 5):
          updatedCustomers = customersMenu(customers)
-         
          customers = updatedCustomers
          
       if(selectedOption == 6):
